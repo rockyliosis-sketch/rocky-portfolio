@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘岩 Rocky | Bilingual Executive Portfolio</title>
+    <meta name="description" content="刘岩 Rocky - International Scout Leader, Founder & Global Resource Integrator">
+    
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #05070c;
+            --bg-grid: radial-gradient(circle at 50% 30%, #0e1529 0%, #05070c 80%);
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --card-hover-bg: rgba(15, 82, 186, 0.04);
+            --card-hover-border: rgba(15, 82, 186, 0.3);
+            
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #4b5563;
+            
+            /* Color Palette from Uniform */
+            --scout-blue: #1e60d5; /* Greek Royal Blue */
+            --scout-blue-glow: rgba(30, 96, 213, 0.15);
+            --scout-gold: #ffc107; /* Emblem Gold */
+            --scout-gold-glow: rgba(255, 193, 7, 0.15);
+            --scout-white: #ffffff; /* Scarf Stripe White */
+            
+            --font-primary: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-title: 'Outfit', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: var(--bg-grid);
+            color: var(--text-primary);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05070c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--scout-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Glass Panel */
+        .glass-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            transition: var(--transition-smooth);
+        }
+
+        /* Sticky Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 90;
+            background: rgba(5, 7, 12, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-crest {
+            width: 24px;
+            height: 24px;
+            fill: var(--scout-gold);
+        }
+
+        .logo-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--scout-blue);
+            box-shadow: 0 0 10px var(--scout-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* Profile Photo Frame */
+        .photo-frame {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 3px solid var(--scout-white);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 8px rgba(30, 96, 213, 0.3);
+            aspect-ratio: 3 / 4;
+            max-width: 360px;
+            margin: 0 auto;
+            transition: var(--transition-smooth);
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 0 12px rgba(255, 193, 7, 0.2);
+            border-color: var(--scout-gold);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(30, 96, 213, 0.1);
+            border: 1px solid rgba(30, 96, 213, 0.2);
+            border-radius: 50px;
+            color: var(--scout-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-name {
+            font-family: var(--font-title);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 40%, var(--scout-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subname {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--scout-gold);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-title);
+        }
+
+        .personal-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .personal-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Dual Language Layout Styles */
+        .bilingual-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .lang-section {
+            text-align: justify;
+        }
+
+        .lang-section.cn {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .lang-section.en {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-left: 2px solid rgba(30, 96, 213, 0.3);
+            padding-left: 1rem;
+            font-style: italic;
+        }
+
+        /* Credentials Section */
+        .cred-card {
+            padding: 2.5rem;
+            background: rgba(30, 96, 213, 0.02);
+            border-color: rgba(30, 96, 213, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+
+        .cred-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: var(--scout-gold-glow);
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+
+        .cred-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .cred-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cred-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .cred-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 193, 7, 0.08);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            color: var(--scout-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cred-icon.blue {
+            background: rgba(30, 96, 213, 0.08);
+            border: 1px solid rgba(30, 96, 213, 0.2);
+            color: var(--scout-blue);
+        }
+
+        .cred-info h3 {
+            font-family: var(--font-title);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        /* Section Global Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 1.5rem;
+        }
+
+        .section-tag {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--scout-gold);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 968px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Feature Card */
+        .feature-card {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover-bg);
+            border-color: var(--card-hover-border);
+            box-shadow: 0 10px 30px rgba(15, 82, 186, 0.1);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--scout-blue);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover .card-icon {
+            background: var(--scout-blue);
+            color: #fff;
+            box-shadow: 0 0 15px var(--scout-blue);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-title);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Career Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            bottom: 8px;
+            left: 4px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-header {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--scout-blue);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: -24px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 2px solid var(--scout-gold);
+            z-index: 2;
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-item:hover::before {
+            background: var(--scout-gold);
+            box-shadow: 0 0 8px var(--scout-gold);
+        }
+
+        .time-badge {
+            font-family: var(--font-title);
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--scout-gold);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-item h4 {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-role {
+            font-size: 0.85rem;
+            color: var(--scout-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills/Competences */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .skill-title {
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-dots {
+            display: flex;
+            gap: 6px;
+            margin-top: 0.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dot.fill {
+            background: var(--scout-blue);
+            box-shadow: 0 0 6px var(--scout-blue);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            text-align: center;
+        }
+
+        .footer-logo {
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================================================
+           VISUAL CMS / BACKEND EDITOR UI
+           ========================================================================== */
+        
+        /* Floating Settings Gear */
+        .admin-trigger {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--scout-gold);
+            border: none;
+            color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.4);
+            transition: var(--transition-smooth);
+        }
+
+        .admin-trigger:hover {
+            transform: rotate(45deg) scale(1.05);
+            box-shadow: 0 6px 25px rgba(255, 193, 7, 0.6);
+        }
+
+        /* Admin Action Bar (Sticky Top) */
+        .admin-bar {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: #111827;
+            border-bottom: 2px solid var(--scout-gold);
+            z-index: 10000;
+            padding: 0 2rem;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            font-family: var(--font-title);
+            font-size: 0.9rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .admin-bar.active {
+            display: flex;
+        }
+
+        body.edit-mode {
+            padding-top: 60px;
+        }
+
+        .admin-btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .admin-btn {
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition-smooth);
+        }
+
+        .admin-btn-save {
+            background: var(--scout-blue);
+            color: #fff;
+        }
+
+        .admin-btn-save:hover {
+            background: #2563eb;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+        }
+
+        .admin-btn-export {
+            background: var(--scout-gold);
+            color: var(--bg-color);
+        }
+
+        .admin-btn-export:hover {
+            background: #ffca2c;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+
+        .admin-btn-exit {
+            background: #374151;
+            color: #fff;
+        }
+
+        .admin-btn-exit:hover {
+            background: #4b5563;
+        }
+
+        /* Editable visual cue */
+        [data-edit-key] {
+            transition: var(--transition-smooth);
+        }
+
+        body.edit-mode [data-edit-key] {
+            position: relative;
+            outline: 1px dashed rgba(255, 193, 7, 0.5) !important;
+            cursor: text !important;
+            background: rgba(255, 193, 7, 0.02);
+            border-radius: 4px;
+            padding: 2px 4px;
+        }
+
+        body.edit-mode [data-edit-key]:focus {
+            outline: 2px solid var(--scout-gold) !important;
+            background: rgba(255, 193, 7, 0.05);
+        }
+
+        body.edit-mode [data-edit-key]::after {
+            content: '✏️';
+            position: absolute;
+            top: -12px;
+            right: 0;
+            font-size: 8px;
+            background: var(--scout-gold);
+            padding: 1px 3px;
+            border-radius: 3px;
+            color: #000;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Fleur-de-lis Crest (Inline SVG) -->
+                <svg class="logo-crest" viewBox="0 0 24 24">
+                    <path d="M12 2C11.5 2 11 3.5 11 5.5C11 8 9.5 8 7 8C6 8 5.5 8.5 5.5 9.5C5.5 11.5 8 11.5 11 11.5C11 14.5 10 17 8 18.5C7.5 19 8 20 9 20C10.5 20 11.5 18 12 16C12.5 18 13.5 20 15 20C16 20 16.5 19 16 18.5C14 17 13 14.5 13 11.5C16 11.5 18.5 11.5 18.5 9.5C18.5 8.5 18 8 17 8C14.5 8 13 8 13 5.5C13 3.5 12.5 2 12 2Z"/>
+                </svg>
+                <span data-edit-key="header.title_cn">刘岩 Rocky 个人档案</span> / 
+                <span data-edit-key="header.title_en" style="font-size:0.9rem; color:var(--text-secondary);">Executive Portfolio</span>
+                <div class="logo-dot"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <!-- Left: Profile Photo -->
+            <div class="photo-frame">
+                <img src="rocky_scout.jpg" alt="刘岩 Rocky - Greek Scout Uniform">
+            </div>
+
+            <!-- Right: Bio Info -->
+            <div class="hero-info">
+                <div class="hero-tagline">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 22 22"></polygon></svg>
+                    <span data-edit-key="hero.top_badge">唯一在册国际 Scouter & 资源发起人</span>
+                </div>
+                
+                <h1 class="hero-name" data-edit-key="hero.name">刘岩 Rocky</h1>
+                <h2 class="hero-subname" data-edit-key="hero.subname">国际青年项目发起人 · 跨国研学与全球IP特许运营专家</h2>
+                
+                <div class="personal-meta">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span data-edit-key="hero.nationality">中国籍 / Chinese</span>
+                    </span>
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span data-edit-key="hero.birthyear">1987年 / Born in 1987</span>
+                    </span>
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span data-edit-key="hero.email">rockyliosis@gmail.com</span>
+                    </span>
+                </div>
+
+                <div class="bilingual-block">
+                    <!-- Chinese Version -->
+                    <div class="lang-section cn" data-edit-key="hero.summary_cn">
+                        自 2009 年起深耕校外青少年实践教育领域，完成从人力资源、活动策划向总经理、CEO的职业跃升。作为多项联合国级别可持续发展倡议及世界童军组织相关商业项目的联合发起人、合伙人，在多边谈判、跨境合规体系搭建、全球优质供应链以及大中华区分销渠道方面拥有绝对的主导权和垄断性优势。
+                    </div>
+                    <!-- English Version (World-facing Pitch) -->
+                    <div class="lang-section en" data-edit-key="hero.summary_en">
+                        A prominent leader in youth experiential education since 2009, with an established record progressing to General Manager and CEO. Serving as a founder, general partner, and exclusive representative for multiple UN-certified SDG initiatives and World Scouting-related commercial IPs, driving multi-lateral negotiations, global supply chains, and large-scale youth delegate mobility.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Scouting Credentials -->
+    <section style="padding: 0 0 60px 0;">
+        <div class="container">
+            <div class="glass-panel cred-card">
+                <h3 class="section-tag" style="margin-bottom: 1.5rem;" data-edit-key="cred.tag">国际童军核心准入席位 / Core Scouting Credentials</h3>
+                <div class="cred-grid">
+                    <div class="cred-item">
+                        <div class="cred-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <div class="cred-info">
+                            <h3 data-edit-key="cred.isgf_title">ISGF 中央分会唯一中国成员</h3>
+                            <div class="bilingual-block" style="margin-bottom:0; gap:0.5rem;">
+                                <p class="lang-section cn" style="font-size:0.9rem;" data-edit-key="cred.isgf_cn">
+                                    国际童军与女童军联谊会（International Scout and Guide Fellowship）Central Branch 唯一的中国成员，直接掌握国际童军网络多边沟通的核心决策通道。
+                                </p>
+                                <p class="lang-section en" style="font-size:0.85rem;" data-edit-key="cred.isgf_en">
+                                    The sole Chinese member of the ISGF Central Branch, establishing a highly exclusive channel of communication and influence within the global scouting community.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cred-item">
+                        <div class="cred-icon blue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                        </div>
+                        <div class="cred-info">
+                            <h3 data-edit-key="cred.scouter_title">中国唯一在册国际 Scouter</h3>
+                            <div class="bilingual-block" style="margin-bottom:0; gap:0.5rem;">
+                                <p class="lang-section cn" style="font-size:0.9rem;" data-edit-key="cred.scouter_cn">
+                                    中国目前唯一拥有国际在册身份的 Scouter（资深童军领袖），是打通大中华区文旅、营地资源与海外顶级组织深度互信的唯一合作节点。
+                                </p>
+                                <p class="lang-section en" style="font-size:0.85rem;" data-edit-key="cred.scouter_en">
+                                    The only internationally registered Scouter (Scout Leader) in China, functioning as the foundational hub for global experiential learning and youth exchanges.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Projects Section -->
+    <section style="background: rgba(30, 96, 213, 0.01); border-top: 1px solid rgba(255, 255, 255, 0.02); border-bottom: 1px solid rgba(255, 255, 255, 0.02);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-edit-key="proj.tag">核心运作项目与流量价值</span>
+                <h2 class="section-title"><span data-edit-key="proj.title">全球IP独家运营与高流量商业项目</span></h2>
+            </div>
+
+            <div class="grid-2">
+                <!-- YA -->
+                <div class="glass-panel feature-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 data-edit-key="proj.ya_title">Youth Ambassadors (YA) 平台及系列独家代理活动</h3>
+                    
+                    <div class="bilingual-block">
+                        <p class="lang-section cn" data-edit-key="proj.ya_cn">
+                            独家代理 Rising Star、ASF 决赛、YES 营地、ASLC 会议及 ORBIT-C 创客营。项目具备极其强大的流量导入及外事交往价值，<strong>每次活动能带领10至20多个国家的青年造访指定主办国开展青年峰会</strong>。2028年，项目确定首次走出亚太区，落地欧洲的<strong>意大利</strong>。
+                        </p>
+                        <p class="lang-section en" data-edit-key="proj.ya_en">
+                            Exclusive Greater China Agent for the YA Platform (Rising Star, ASF, YES, ASLC, ORBIT-C). Built as a high-volume mobility platform, **regularly mobilizing youth delegations from 10 to 20+ countries** for international summits. In 2028, the platform will expand outside the Asia-Pacific for the first time, hosting its next global event in **Italy**.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight" data-edit-key="proj.ya_meta1">10-20+ Countries Traffic</span>
+                        <span class="meta-tag" data-edit-key="proj.ya_meta2">2028 Italy Launch</span>
+                        <span class="meta-tag" data-edit-key="proj.ya_meta3">大中华区独家运营</span>
+                    </div>
+                </div>
+
+                <!-- World Scout Shop -->
+                <div class="glass-panel feature-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+                    </div>
+                    <h3 data-edit-key="proj.wss_title">World Scout Shop 全球特许特许商品商业运营</h3>
+                    
+                    <div class="bilingual-block">
+                        <p class="lang-section cn" data-edit-key="proj.wss_cn">
+                            作为核心发起人及执行领袖，主导世界童军授权商品全球运营。<strong>本人是项目核心合伙人公司——英国 NG Terminal Ltd. 的合伙人</strong>，通过该公司主体承接全球仓储、税务合规，并深度掌控国内优质制造供应链资源，实现跨境 IP 商业的闭环运作。
+                        </p>
+                        <p class="lang-section en" data-edit-key="proj.wss_en">
+                            Co-founder and lead executive directing global commerce for licensed World Scouting products. **Partner at the UK-based entity NG Terminal Ltd.**, combining international trade compliance, UK-based warehousing, and domestic Chinese manufacturing to create a seamless e-commerce supply chain.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight" data-edit-key="proj.wss_meta1">NG Terminal Partner</span>
+                        <span class="meta-tag" data-edit-key="proj.wss_meta2">UK & HK SPV</span>
+                        <span class="meta-tag" data-edit-key="proj.wss_meta3">Supply Chain Monopoly</span>
+                    </div>
+                </div>
+
+                <!-- WHENCE -->
+                <div class="glass-panel feature-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                    </div>
+                    <h3 data-edit-key="proj.whence_title">WHENCE 联合国经社部官方行动倡议</h3>
+                    
+                    <div class="bilingual-block">
+                        <p class="lang-section cn" data-edit-key="proj.whence_cn">
+                            正式注册于联合国经社部可持续发展平台项目（#SDGAction58497）。以黄河试点的生态水教育及大河流域对话为基础，制定青年大使、水利工程遗产、全球影像报告等8大交付标准，打通国际官方治理资源。
+                        </p>
+                        <p class="lang-section en" data-edit-key="proj.whence_en">
+                            An officially registered SDG initiative on the United Nations DESA SDG Actions Platform (#SDGAction58497). Managing 8 deliverables (D1-D8) surrounding ecological water heritage and youth leadership dialogues, linking UN targets to regional government initiatives.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight" data-edit-key="proj.whence_meta1">UN DESD SDG Action</span>
+                        <span class="meta-tag" data-edit-key="proj.whence_meta2">#SDGAction58497</span>
+                        <span class="meta-tag" data-edit-key="proj.whence_meta3">8 Deliverables</span>
+                    </div>
+                </div>
+
+                <!-- Chambers & Media -->
+                <div class="glass-panel feature-card">
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line></svg>
+                    </div>
+                    <h3 data-edit-key="proj.chamber_title">商会特设委员会与官方媒体代理</h3>
+                    
+                    <div class="bilingual-block">
+                        <p class="lang-section cn" data-edit-key="proj.chamber_cn">
+                            担任香港河南总商会国际研学委员会主席，策划两地青年双向交流。同时担任河南大公科技有限公司 CEO，作为香港大公文汇传媒集团在河南的官方代理执行公司，全权管理集团在豫的官方媒体外宣、资源整合及科技项目。
+                        </p>
+                        <p class="lang-section en" data-edit-key="proj.chamber_en">
+                            President of the HKHNCC International Study Tour Committee, developing bi-directional student mobility. Also serving as CEO of Henan Dagong Tech, the official executing partner for Hong Kong Ta Kung Wen Wei Media Group in Henan, managing media publicity, government relations, and tech programs.
+                        </p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="meta-tag highlight" data-edit-key="proj.chamber_meta1">HK Media Agency</span>
+                        <span class="meta-tag" data-edit-key="proj.chamber_meta2">Chamber Committee</span>
+                        <span class="meta-tag" data-edit-key="proj.chamber_meta3">Govt Relations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Journey Timeline Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-edit-key="journey.tag">履历沉淀</span>
+                <h2 class="section-title"><span data-edit-key="journey.title">国内从业深耕与管理脉络</span></h2>
+            </div>
+
+            <div class="experience-container">
+                <!-- Left Column -->
+                <div>
+                    <h3 class="timeline-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        <span data-edit-key="journey.left_header">企业经营与总裁管理阶段</span>
+                    </h3>
+                    <div class="timeline">
+                        <!-- Yujiao -->
+                        <div class="timeline-item">
+                            <span class="time-badge">2020 - Present</span>
+                            <h4 data-edit-key="journey.yujiao_title">河南大公科技有限公司</h4>
+                            <div class="timeline-role" data-edit-key="journey.yujiao_role">联合创始人 & CEO</div>
+                            <div class="bilingual-block">
+                                <p class="lang-section cn" data-edit-key="journey.yujiao_cn">
+                                    作为香港大公文汇传媒集团在河南的官方代理执行实体，主导集团在河南省的官方媒体宣推、外商投资对接、大型文化项目实施及商业科技落地运营。
+                                </p>
+                                <p class="lang-section en" data-edit-key="journey.yujiao_en">
+                                    Leading branding, official relations, and business-technology programs in Henan for Hong Kong Ta Kung Wen Wei Media Group as its regional agency execution partner.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Yujiao Camp -->
+                        <div class="timeline-item">
+                            <span class="time-badge">2017 - Present</span>
+                            <h4 data-edit-key="journey.camp_title">河南豫教青少年户外营地教育中心有限公司</h4>
+                            <div class="timeline-role" data-edit-key="journey.camp_role">创始人 & 总经理</div>
+                            <div class="bilingual-block">
+                                <p class="lang-section cn" data-edit-key="journey.camp_cn">
+                                    自主创立豫教营地教育品牌，主导高含金量青少年 PBL 研学课程顶层研发与规模化营地基地运营，打通覆盖全省的学校及渠道网络。
+                                </p>
+                                <p class="lang-section en" data-edit-key="journey.camp_en">
+                                    Founded Yujiao Camp, leading high-standard experiential learning camp designs, local school contracts, and overseeing operations across camp networks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <h3 class="timeline-header" style="color: var(--scout-gold);">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        <span data-edit-key="journey.right_header">行业深耕与实战沉淀阶段</span>
+                    </h3>
+                    <div class="timeline">
+                        <!-- Xiao Ba Mao -->
+                        <div class="timeline-item">
+                            <span class="time-badge">2009 - 2017</span>
+                            <h4 data-edit-key="journey.found_title">河南小八毛教育咨询有限公司 & 郑州帝苑阳光少年综合实践培训服务中心</h4>
+                            <div class="timeline-role" data-edit-key="journey.found_role">人力资源主管 → 运营与策划主管 → 总经理</div>
+                            <div class="bilingual-block">
+                                <p class="lang-section cn" data-edit-key="journey.found_cn">
+                                    切入青少年社会实践与素质培训领域，从基层人力资源（HR）逐步成长为集团项目的核心策划人与大区项目总监，最终担纲总经理，统筹管理大型校外实践与培训项目，实现数万名学生的课程运营与服务网络落地。
+                                </p>
+                                <p class="lang-section en" data-edit-key="journey.found_en">
+                                    Developed early foundations in non-school youth practice training. Advanced from HR to Planning Lead and General Manager, managing large-scale out-of-school practice programs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills/Competences Section -->
+    <section style="border-top: 1px solid rgba(255, 255, 255, 0.02); padding: 80px 0;">
+        <style>
+            .skills-section-container {
+                display: grid;
+                grid-template-columns: 0.9fr 1.1fr;
+                gap: 3.5rem;
+                align-items: center;
+            }
+            @media (max-width: 968px) {
+                .skills-section-container {
+                    grid-template-columns: 1fr;
+                    gap: 3rem;
+                }
+            }
+            .radar-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            .radar-svg {
+                width: 100%;
+                max-width: 420px;
+                height: auto;
+                filter: drop-shadow(0 0 20px rgba(30, 96, 213, 0.15));
+            }
+            .radar-axis-line {
+                stroke: rgba(255, 255, 255, 0.1);
+                stroke-width: 1px;
+                stroke-dasharray: 4 4;
+            }
+            .radar-grid-line {
+                fill: none;
+                stroke: rgba(255, 255, 255, 0.05);
+                stroke-width: 1px;
+            }
+            .radar-user-area {
+                fill: rgba(255, 193, 7, 0.22);
+                stroke: var(--scout-gold);
+                stroke-width: 3px;
+                filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.4));
+                transition: var(--transition-smooth);
+            }
+            .radar-node {
+                fill: var(--scout-gold);
+                stroke: var(--scout-white);
+                stroke-width: 2px;
+                cursor: pointer;
+                transition: var(--transition-smooth);
+            }
+            .radar-node:hover {
+                r: 8px;
+                fill: var(--scout-white);
+                stroke: var(--scout-gold);
+                filter: drop-shadow(0 0 10px var(--scout-gold));
+            }
+            .radar-label {
+                fill: var(--text-secondary);
+                font-size: 11px;
+                font-family: var(--font-title);
+                font-weight: 600;
+                transition: var(--transition-smooth);
+                cursor: pointer;
+            }
+            .radar-label:hover {
+                fill: var(--scout-gold);
+            }
+            .skills-detailed-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .skill-detail-card {
+                padding: 1.5rem;
+                border-left: 4px solid rgba(255, 255, 255, 0.05);
+                background: rgba(255, 255, 255, 0.01);
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+                transition: var(--transition-smooth);
+                cursor: pointer;
+            }
+            .skill-detail-card:hover, .skill-detail-card.active {
+                border-left-color: var(--scout-gold);
+                background: rgba(255, 193, 7, 0.03);
+                transform: translateX(6px);
+            }
+            .skill-detail-card h3 {
+                font-family: var(--font-title);
+                font-size: 1.15rem;
+                font-weight: 700;
+                margin-bottom: 0.6rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .skill-detail-card .icon-badge {
+                color: var(--scout-gold);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .skill-detail-card p.desc-cn {
+                color: var(--text-primary);
+                font-size: 0.95rem;
+                margin-bottom: 0.4rem;
+                text-align: justify;
+            }
+            .skill-detail-card p.desc-en {
+                color: var(--text-secondary);
+                font-size: 0.85rem;
+                font-style: italic;
+                border-left: 2px solid rgba(30, 96, 213, 0.2);
+                padding-left: 8px;
+                text-align: justify;
+            }
+        </style>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-edit-key="skills.tag">核心专长 / Core Competencies</span>
+                <h2 class="section-title"><span data-edit-key="skills.title">多维战略能力模型</span></h2>
+            </div>
+
+            <div class="skills-section-container">
+                <!-- Left Column: Interactive Radar Chart -->
+                <div class="radar-wrapper">
+                    <svg class="radar-svg" viewBox="0 0 400 340">
+                        <!-- Background grids (Hexagons) -->
+                        <polygon class="radar-grid-line" points="200,50 303.9,110 303.9,230 200,290 96.1,230 96.1,110" />
+                        <polygon class="radar-grid-line" points="200,74 283.1,122 283.1,218 200,266 116.9,218 116.9,122" />
+                        <polygon class="radar-grid-line" points="200,98 262.4,134 262.4,206 200,242 137.6,206 137.6,134" />
+                        <polygon class="radar-grid-line" points="200,122 241.6,146 241.6,194 200,218 158.4,194 158.4,146" />
+                        <polygon class="radar-grid-line" points="200,146 220.8,158 220.8,182 200,194 179.2,182 179.2,158" />
+                        
+                        <!-- Axis lines -->
+                        <line class="radar-axis-line" x1="200" y1="170" x2="200" y2="50" />
+                        <line class="radar-axis-line" x1="200" y1="170" x2="303.9" y2="110" />
+                        <line class="radar-axis-line" x1="200" y1="170" x2="303.9" y2="230" />
+                        <line class="radar-axis-line" x1="200" y1="170" x2="200" y2="290" />
+                        <line class="radar-axis-line" x1="200" y1="170" x2="96.1" y2="230" />
+                        <line class="radar-axis-line" x1="200" y1="170" x2="96.1" y2="110" />
+                        
+                        <!-- Axis Labels -->
+                        <text class="radar-label" x="200" y="32" text-anchor="middle" onmouseover="highlightSkill(0)">AI-Driven Productivity</text>
+                        <text class="radar-label" x="315" y="105" text-anchor="start" onmouseover="highlightSkill(1)">0-to-1 Incubation</text>
+                        <text class="radar-label" x="315" y="235" text-anchor="start" onmouseover="highlightSkill(2)">Cross-Border Logistics</text>
+                        <text class="radar-label" x="200" y="312" text-anchor="middle" onmouseover="highlightSkill(3)">Experiential Education</text>
+                        <text class="radar-label" x="85" y="235" text-anchor="end" onmouseover="highlightSkill(4)">Global Governance & GR</text>
+                        <text class="radar-label" x="85" y="105" text-anchor="end" onmouseover="highlightSkill(5)">Global Reach & Culture</text>
+
+                        <!-- User Skill Area -->
+                        <polygon class="radar-user-area" points="200,56 298.7,113 288.3,221 200,278 104.4,225.2 98.2,111.2" />
+                        
+                        <!-- Interactive Nodes -->
+                        <circle class="radar-node" cx="200" cy="56" r="5" data-index="0" onmouseover="highlightSkill(0)" />
+                        <circle class="radar-node" cx="298.7" cy="113" r="5" data-index="1" onmouseover="highlightSkill(1)" />
+                        <circle class="radar-node" cx="288.3" cy="221" r="5" data-index="2" onmouseover="highlightSkill(2)" />
+                        <circle class="radar-node" cx="200" cy="278" r="5" data-index="3" onmouseover="highlightSkill(3)" />
+                        <circle class="radar-node" cx="104.4" cy="225.2" r="5" data-index="4" onmouseover="highlightSkill(4)" />
+                        <circle class="radar-node" cx="98.2" cy="111.2" r="5" data-index="5" onmouseover="highlightSkill(5)" />
+                    </svg>
+                </div>
+
+                <!-- Right Column: Detailed Capability Description Cards -->
+                <div class="skills-detailed-list">
+                    <!-- Skill 0 -->
+                    <div class="glass-panel skill-detail-card active" data-index="0" onmouseover="highlightSkill(0)">
+                        <h3>
+                            <span class="icon-badge">⚡</span>
+                            <span data-edit-key="skills.s0_title">AI 协同与多模态 Agent 深度赋能</span>
+                        </h3>
+                        <p class="desc-cn" data-edit-key="skills.s0_cn">
+                            精通主流大语言模型、Claude Code、Codex 及 Antigravity 等多模态 Agent 协同工具。在生图、PPT美化、文案策划与网页UI设计上具备全栈级 AI 生产力；在有预算支持的前提下，可主导完成视频流的 AI 自动化生成与落地。
+                        </p>
+                        <p class="desc-en" data-edit-key="skills.s0_en">
+                            Advanced proficiency in LLMs, Claude Code, Codex, and multi-agent systems like Antigravity. Capable of driving full-stack AI-driven content generation, strategic copywriting, and interactive UI/UX prototyping, alongside managing automated AI video production cycles.
+                        </p>
+                    </div>
+
+                    <!-- Skill 1 -->
+                    <div class="glass-panel skill-detail-card" data-index="1" onmouseover="highlightSkill(1)">
+                        <h3>
+                            <span class="icon-badge">🎯</span>
+                            <span data-edit-key="skills.s1_title">0到1项目顶层战略策划与孵化</span>
+                        </h3>
+                        <p class="desc-cn" data-edit-key="skills.s1_cn">
+                            得益于长期的高管及企业 CEO 角色，具备卓越的项目顶层设计与“从零到一”策划力。拒绝平庸的文案起草，而是从商业闭环、资本架构、多边资源匹配上进行顶层规划，确保项目从概念迅速转化为可执行成果。
+                        </p>
+                        <p class="desc-en" data-edit-key="skills.s1_en">
+                            Rooted in extensive senior executive and CEO experiences, possessing superior strategic design and 0-to-1 project incubation capacities. Transcending conventional content execution to architect robust commercial loops, capital structures, and multi-dimensional resource mapping.
+                        </p>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="glass-panel skill-detail-card" data-index="2" onmouseover="highlightSkill(2)">
+                        <h3>
+                            <span class="icon-badge">📦</span>
+                            <span data-edit-key="skills.s2_title">跨境合规物流与电商团队统领</span>
+                        </h3>
+                        <p class="desc-cn" data-edit-key="skills.s2_cn">
+                            手握专业的跨境运营与物流电商团队，完美承接全球仓储与跨境分销通路。作为英国合伙公司的合伙人，在多边合规商贸、全球货运与供应链调配中具备稳健的实体支撑。
+                        </p>
+                        <p class="desc-en" data-edit-key="skills.s2_en">
+                            Backed by robust infrastructure as a UK-entity partner, mastering compliant global warehousing and cross-border distribution networks to ensure secure, resilient physical supply chains.
+                        </p>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="glass-panel skill-detail-card" data-index="3" onmouseover="highlightSkill(3)">
+                        <h3>
+                            <span class="icon-badge">⛺</span>
+                            <span data-edit-key="skills.s3_title">青少年研学与营地教育实操深耕</span>
+                        </h3>
+                        <p class="desc-cn" data-edit-key="skills.s3_cn">
+                            自 2009 年起深耕校外实践培训，对营地建设、研学课程开发及大型社会实践活动的组织架构有深刻行业积淀与实操方法论。
+                        </p>
+                        <p class="desc-en" data-edit-key="skills.s3_en">
+                            Commanding nearly two decades of deep-rooted expertise in experiential education and non-school youth practice since 2009, with proven execution in camp design and large-scale youth activity operations.
+                        </p>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="glass-panel skill-detail-card" data-index="4" onmouseover="highlightSkill(4)">
+                        <h3>
+                            <span class="icon-badge">🔗</span>
+                            <span data-edit-key="skills.s4_title">多边外交官方资源与渠道掌控</span>
+                        </h3>
+                        <p class="desc-cn" data-edit-key="skills.s4_cn">
+                            直接对接联合国经社部（UN DESA）、世界童军组织（WOSM）等全球治理网络，独家垄断大中华区各省市核心教育及景区对接端，构建无法逾越的项目准入门槛。
+                        </p>
+                        <p class="desc-en" data-edit-key="skills.s4_en">
+                            Direct access to intergovernmental networks such as UN DESA and WOSM, securing high-barrier institutional access across Greater China’s regional education sectors and premier cultural landmarks.
+                        </p>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="glass-panel skill-detail-card" data-index="5" onmouseover="highlightSkill(5)">
+                        <h3>
+                            <span class="icon-badge">🌍</span>
+                            <span data-edit-key="skills.s5_title">国际化思维与全球渠道认知</span>
+                        </h3>
+                        <p class="desc-cn" data-edit-key="skills.s5_cn">
+                            作为具有国际在册身份的 Scouter 及 ISGF 中央分会中国代表，个人认知与渠道深度国际化。能够突破本土思维壁垒，在跨文化和全球治理背景中开展多边合作。
+                        </p>
+                        <p class="desc-en" data-edit-key="skills.s5_en">
+                            Leveraging credentials as an internationally registered Scouter and ISGF Central Branch representative to bridge localized insights with global governance frameworks and drive multi-lateral cooperation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function highlightSkill(index) {
+                // Remove active classes
+                document.querySelectorAll('.skill-detail-card').forEach(el => el.classList.remove('active'));
+                document.querySelectorAll('.radar-node').forEach(el => {
+                    el.setAttribute('r', '5');
+                    el.style.fill = 'var(--scout-gold)';
+                    el.style.stroke = 'var(--scout-white)';
+                    el.style.filter = 'none';
+                });
+                
+                // Add active class to card
+                const card = document.querySelector(`.skill-detail-card[data-index="${index}"]`);
+                if (card) card.classList.add('active');
+                
+                // Highlight corresponding node
+                const node = document.querySelector(`.radar-node[data-index="${index}"]`);
+                if (node) {
+                    node.setAttribute('r', '8');
+                    node.style.fill = 'var(--scout-white)';
+                    node.style.stroke = 'var(--scout-gold)';
+                    node.style.filter = 'drop-shadow(0 0 8px var(--scout-gold))';
+                }
+            }
+        </script>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2026 刘岩 Rocky | 个人投资与项目管理档案. 保留所有权利.<br>
+                © 2026 Rocky Liu | Executive Portfolio & Program Registry. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       VISUAL CMS / EDITOR INTERACTIVE SCRIPTS
+       ========================================================================== -->
+    
+    <!-- Floating Admin Gear Icon -->
+    <button class="admin-trigger" onclick="toggleEditMode()" title="开启/关闭网页内容编辑">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+    </button>
+
+    <!-- Admin Action Bar -->
+    <div class="admin-bar" id="adminBar">
+        <div>
+            <strong>✏️ 网页可视化编辑器 (Visual CMS Mode)</strong>
+            <span style="font-size: 0.75rem; color: #9ca3af; margin-left: 10px;">点击下方虚线框文字直接修改</span>
+        </div>
+        <div class="admin-btn-group">
+            <button class="admin-btn admin-btn-save" onclick="saveToLocal()">💾 保存修改</button>
+            <button class="admin-btn admin-btn-export" onclick="exportHTML()">📥 导出并覆盖 HTML</button>
+            <button class="admin-btn admin-btn-exit" onclick="toggleEditMode()">退出编辑</button>
+        </div>
+    </div>
+
+    <script>
+        // Load custom data from localStorage if exists
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedData = localStorage.getItem('resumeData');
+            if (savedData) {
+                try {
+                    const data = JSON.parse(savedData);
+                    Object.keys(data).forEach(key => {
+                        const el = document.querySelector(`[data-edit-key="${key}"]`);
+                        if (el) {
+                            el.innerHTML = data[key];
+                        }
+                    });
+                    console.log('Resume content loaded from local storage.');
+                } catch(e) {
+                    console.error('Failed to load saved data:', e);
+                }
+            }
+        });
+
+        // Toggle Edit Mode
+        function toggleEditMode() {
+            const body = document.body;
+            const adminBar = document.getElementById('adminBar');
+            
+            if (body.classList.contains('edit-mode')) {
+                // Exit Edit Mode
+                body.classList.remove('edit-mode');
+                adminBar.classList.remove('active');
+                document.querySelectorAll('[data-edit-key]').forEach(el => {
+                    el.removeAttribute('contenteditable');
+                });
+            } else {
+                // Enter Edit Mode
+                body.classList.add('edit-mode');
+                adminBar.classList.add('active');
+                document.querySelectorAll('[data-edit-key]').forEach(el => {
+                    el.setAttribute('contenteditable', 'true');
+                });
+            }
+        }
+
+        // Save modifications to Local Storage
+        function saveToLocal() {
+            const data = {};
+            document.querySelectorAll('[data-edit-key]').forEach(el => {
+                const key = el.getAttribute('data-edit-key');
+                data[key] = el.innerHTML;
+            });
+            localStorage.setItem('resumeData', JSON.stringify(data));
+            alert('💾 修改已临时保存到本地浏览器缓存！即使刷新页面也不会丢失。\n如需永久覆盖 index.html，请点击“导出并覆盖 HTML”按钮下载。');
+        }
+
+        // Export updated HTML file
+        function exportHTML() {
+            // Create a clean clone of the document
+            let docClone = document.documentElement.cloneNode(true);
+            
+            // Remove editor components in the download version
+            const cloneAdminBar = docClone.querySelector('#adminBar');
+            const cloneTrigger = docClone.querySelector('.admin-trigger');
+            if (cloneAdminBar) cloneAdminBar.remove();
+            
+            // Clean edit classes and contenteditable attributes
+            docClone.classList.remove('edit-mode');
+            docClone.querySelectorAll('.edit-mode').forEach(el => el.classList.remove('edit-mode'));
+            docClone.querySelectorAll('[contenteditable]').forEach(el => {
+                el.removeAttribute('contenteditable');
+            });
+            
+            // Retrieve current values and embed them in the raw HTML in the clone
+            document.querySelectorAll('[data-edit-key]').forEach(el => {
+                const key = el.getAttribute('data-edit-key');
+                const cloneEl = docClone.querySelector(`[data-edit-key="${key}"]`);
+                if (cloneEl) {
+                    cloneEl.innerHTML = el.innerHTML; // Hardcode the updated HTML values
+                }
+            });
+
+            const finalHtml = '<!DOCTYPE html>\n' + docClone.outerHTML;
+            const blob = new Blob([finalHtml], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'index.html';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            
+            alert('📥 index.html 导出成功！\n请将您下载的新 index.html 替换掉工作区目录下的同名文件，即可实现永久保存修改！');
+        }
+    </script>
+</body>
+</html>
