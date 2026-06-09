@@ -547,7 +547,7 @@
             background: var(--scout-gold);
             border: none;
             color: var(--bg-color);
-            display: flex;
+            display: none; /* 默认隐藏编辑按钮，防止游客看到 */
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -1266,6 +1266,15 @@
     <script>
         // Load custom data from localStorage if exists
         window.addEventListener('DOMContentLoaded', () => {
+            // 检查网址是否包含暗号：?edit=rocky
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('edit') === 'rocky') {
+                const trigger = document.querySelector('.admin-trigger');
+                if (trigger) {
+                    trigger.style.display = 'flex'; // 显示编辑齿轮按钮
+                }
+            }
+
             const savedData = localStorage.getItem('resumeData');
             if (savedData) {
                 try {
